@@ -1,0 +1,79 @@
+使用事项
+1.使用数据库需要登录，数据库有默认用户（username:sys_dba ,password: oracle）,使用该账户登录可以避免没有权限；
+2.新建的用户是没有权限的；
+3.出现>>>sql以后即可使用sql语句进行操作；
+4.使用完毕以后使用exit；退出。
+
+本数据库管理系统支持的sql语法说明如下：
+1.
+select [all|distinct] 列+
+from (表 |（子查询语句）as 新表名)* | 表1 natural join 表2
+where 条件
+group by 列+
+having 条件
+order by 列3 [asc|desc]；
+
+
+ps  查询分为单表查询，连接查询（等值连接，自然连接），
+嵌套查询（在条件中包含表的查询，仅实现了不相关子查询，包含IN 子查询，op ANY（子查询），op SOME（子查询）,op （子查询）），op包含<,>，<=,>=和in，如果不加any和all，则子查询的结果必须为单值。
+集合查询（union，INTERSECT，EXCEPT）
+派生表查询（）
+
+2.
+insert into 表名 values(列1值，列2值....);
+
+3.
+delete from 表名 where 条件;
+
+4.
+update 表名 set 列名=值 where 条件;
+
+5.
+grant 权限+
+on 对象类型 对象名+
+to 用户+；
+
+6.
+revoke 权限+
+on 对象类型 对象名+
+from 用户+;
+
+8.
+create table 表名
+（（列名 数据类型 列级完整性约束条件，）+
+）；
+
+9.
+drop table 表名;
+
+11.
+create user 用户名
+with DBA|RESOURCE；
+
+12.
+exit;
+安全退出程序
+
+13.
+quit;
+退出当前用户，重新进入登录界面
+
+14.
+execfile "文件名.txt";
+从文件中读取sql语句，并执行
+
+
+说明：
+1.+号表示前面的项目有1到多项
+2.权限有CREATE TABLE,CREATE USER,DROP
+  (对表),SELECT,INSERT,UPDATE,ALL PRIVILEGES，DELETE
+3.条件为
+   [not] 条件表达式1 [or|and 条件表达式]+
+4.条件表达式为
+   支持>,<.>=.<=.!=,=以及not加上以上的二元运算
+   支持between and和not between and的三元运算符
+   支持IN和NOT IN的集合关系
+   支持LIKE和NOT LIKE的字符串匹配
+5.列级约束条件 PRIMARY KEY
+6.聚集函数
+ COUNT（*|列名），SUM（列名），AVG（列名）， MAX（列名），MIN（列名）
