@@ -23,19 +23,19 @@
 ### frontend类
 >frontend类主要负责对于命令行从读取命令
 
-###Parser类
+### Parser类
 >Parser类负责接收frontend传来的sql语句，然后解析出对应的sql语句的含义，传递给Database类执行相关的调用。
 
-###Database类
+### Database类
 >Database类主要负责对Parser类的调用进行权限检查，合法性检查等工作，并对成功的操作执行日志文件的记录。
 
-###API类
+### API类
 >将对底层的操作封装在一个类中，方便上层调用。
 
-###Buffer_manager类
+### Buffer_manager类
 >对于表而言，我们使用page来进行管理，所以需要一个类对页进行管理，执行对应页的调入和换页等操作。
 
-###Table_manager类
+### Table_manager类
 >实现对表的基本操作，包括定义删除增删查改等等，同时实现对表中数据的索引等等。
 
 
