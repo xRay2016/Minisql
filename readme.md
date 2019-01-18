@@ -15,6 +15,7 @@
 ## 模块介绍
 
 > Minisql主要分为三个部分，第一个部分是frontend类，主要负责从命令行中读取sql语句以及展示相应的输出。第二个部分是Parser类，Database类以及API类，主要负责对相关用户权限的检查以及对sql语句解析优化并执行相关的调用。第三个部分是table_manager和data_dictionary_manager类等，主要负责表，数据字典等的信息在文件系统中的存储以及查询，插入等操作的支持。
+
 > ![Alt text](./pic1.png)
 
 
@@ -22,7 +23,7 @@
 ### frontend类
 >frontend类主要负责对于命令行从读取命令
 
-####Parser类
+###Parser类
 >Parser类负责接收frontend传来的sql语句，然后解析出对应的sql语句的含义，传递给Database类执行相关的调用。
 
 ###Database类
